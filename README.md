@@ -1,4 +1,4 @@
-# blog_app
+# Blogie!
 
 A new Flutter project.
 
