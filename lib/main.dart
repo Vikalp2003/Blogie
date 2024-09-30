@@ -1,9 +1,13 @@
+import 'package:blog_app/core/secrets/supabase_secrets.dart';
 import 'package:blog_app/core/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'features/auth/presentation/pages/login_page.dart';
 
-void main() {
-
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final supabase = await Supabase.initialize(
+      url: AppSecrets.supabaseurl, anonKey: AppSecrets.annonKey);
   runApp(const MyApp());
 }
 
@@ -21,4 +25,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
